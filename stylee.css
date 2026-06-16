@@ -66,13 +66,23 @@ h1 {
 .menuItems li {
   padding: 15px 10px;
   background-color: #d1d1d1;
-  width: 50vw;
+  width: 20vw;
   margin-bottom: 1px;
 }
+
 .menuItems li:hover {
   background-color: #c0c0c0;
 }
 
 #logoSteam {
   height: 40px;
+}
+
+@media all and (max-width: 981px) {
+    .menuItems li {
+  padding: 15px 10px;
+  background-color: #d1d1d1;
+  width: 100vw;
+  margin-bottom: 1px;
+
 }
