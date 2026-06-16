@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
+
+label {
+margin: 0;
+padding: 5px;
+  font-size: 30px;
+  background-color: #d1d1d1;
+  cursor: pointer;
+  border-radius: 5px;
+
+}
+
+label:hover {
+  background-color: #c0c0c0;
+}
+
+nav {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 10px 10px;
+  background-color: #d1d1d1;
+}
+
+h1 {
+  margin: 0 auto;
+  font-size: 30px;
+  font-family: 'Archivo', sans-serif;
+  font-weight: normal;
+}
+
+#toggle {
+    display: none;
+}
+
+#toggle:checked + .menuItems {
+  display: flex;
+}
+.menuItems {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  margin-top: 13px;
+  margin-left: -10px;
+  list-style: none;
+}
+
+.menuItems a {
+    font-family: 'Archivo', sans-serif;
+  text-decoration: none;
+  list-style: none;
+  color: black;
+  font-size: 20px;
+}
+.menuItems li {
+  padding: 15px 10px;
+  background-color: #d1d1d1;
+  width: 50vw;
+  margin-bottom: 1px;
+}
+.menuItems li:hover {
+  background-color: #c0c0c0;
+}
+
+#logoSteam {
+  height: 40px;
+}
