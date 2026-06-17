@@ -4,12 +4,42 @@
       font-family: 'Archivo', sans-serif;
 
 }
+body{
+
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: 150vw;
+background-position: top;
+}
+/*utilisation de l'ia pour assombrir le fond*/
+body::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    
+    /* On applique l'image de fond */
+    background: url('background1.png') no-repeat center / cover;
+    
+    /* GESTION DE LA TRANSPARENCE : 0 = invisible, 1 = opaque */
+    opacity: 0.4; 
+    
+    z-index: -1; /* Place l'image DERRIÈRE le texte */
+}
+.title {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+#dstLogo {
+  height: 5em;
+}
 
 label {
   margin: 0;
   padding: 5px;
   font-size: 30px;
-  background-color: #d1d1d1;
+  background-color: #000000;
   cursor: pointer;
   border-radius: 5px;
 }
@@ -26,7 +56,8 @@ nav {
   align-items: center;
   margin: 0;
   padding: 10px 10px;
-  background-color: #d1d1d1;
+  background-color: rgba(0, 0, 0, 0.700);
+  color: rgba(255, 255, 255, 0.700);
 }
 
 h1 {
@@ -61,13 +92,14 @@ h1 {
 }
 .menuItems li {
   padding: 15px 10px;
-  background-color: #d1d1d1;
+  background-color: rgba(0, 0, 0, 0.700);
   width: 20vw;
   margin-bottom: 1px;
+  color: rgba(255, 255, 255, 0.700);
 }
 
 .menuItems li:hover {
-  background-color: #c0c0c0;
+  background-color: rgb(0, 0, 0);
 }
 
 #logoSteam {
@@ -77,35 +109,58 @@ h1 {
 @media all and (max-width: 981px) {
   .menuItems li {
     padding: 15px 10px;
-    background-color: #d1d1d1;
+    background-color: rgba(0, 0, 0, 0.700);
     width: 100vw;
     margin-bottom: 1px;
   }
 }
 
+#dayInput {
+  border: transparent;
+}
+
 /*suppression du bouton de l'input*/
-/* #dayInput::-webkit-outer-spin-button,
+#dayInput::-webkit-outer-spin-button,
 #dayInput::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-} */
+}
+
+#calendarSize::-webkit-outer-spin-button,
+#calendarSize::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 
 .setDay {
+  color: rgba(255, 255, 255, 0.700);
   display: flex;
   margin: 5px;
   align-items: center;
+  font-size: 20px;
+  gap: 10px;
+  border: 0px black transparent;
+  padding-left: 50px;
+  background-color: rgba(0, 0, 0, 0.700);
+  border-radius: 2em;
+}
+
+.setDay p {
+  border-right: 1px white solid;
+  padding-right: 60px;
 }
 
 .setDay input {
   display: flex;
   justify-items: center;
-  font-size: 4em;
+  font-size: 3em;
   height: 100%;
   margin: 5px;
   width: 2em;
-  border: 1px solid black;
+  border: 0px;
   background-color: rgba(0, 0, 0, 0);
-
+color: rgb(255, 255, 255);
 }
 
 #gridCalendar {
@@ -118,7 +173,7 @@ h1 {
 
 .divDay {
   border: 1px solid black;
-  width: 200px;
+  width: fit-content;
   height: 4em;
   display: flex;
   align-items: center;
@@ -141,6 +196,7 @@ h1 {
 
 .input {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   margin-top: 12vw;
 }
@@ -156,6 +212,9 @@ h1 {
   align-self: center;
   border-radius: 35px;
   cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.700);
+  color: white;
+  font-size: 40px;
 }
 
 #btnDay:hover {
