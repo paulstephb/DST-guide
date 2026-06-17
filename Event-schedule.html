@@ -10,6 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/41b2463826.js"
+      crossorigin="anonymous"
+    ></script>
 
     <title>dst Guide</title>
   </head>
@@ -37,7 +41,25 @@
           />
         </a>
       </nav>
-
     </header>
+    <main>
+      <div class="box1">
+        <div class="input">
+          <div class="setDay">
+            <p>Day</p>
+            <input type="number" id="dayInput" min="1" value="1" />
+          </div>
+          <div class="setDay">
+            <p>Calendar Size</p>
+            <input type="number" id="calendarSize" min="5" value="5" />
+          </div>
+        </div>
+        <button id="btnDay" class="">
+          <i class="fa-solid fa-arrow-down"></i>
+        </button>
+      </div>
+      <div id="gridCalendar"></div>
+    </main>
+    <script src="script.js" defer></script>
   </body>
 </html>
