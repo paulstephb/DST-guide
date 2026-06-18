@@ -291,7 +291,7 @@ margin-top: 12vw;
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
 }
@@ -315,4 +315,8 @@ footer {
   display: flex;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.7);
+}
+
+main {
+  padding-bottom: 10vw;
 }
