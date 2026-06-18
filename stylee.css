@@ -1,34 +1,23 @@
 * {
   margin: 0;
   padding: 0;
-      font-family: 'Archivo', sans-serif;
-
+  font-family: "Archivo", sans-serif;
 }
-body{
 
-  background-color: black;
+body {
+  background-image: url(background1.png);
   background-repeat: no-repeat;
-  background-size: 150vw;
-background-position: top;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }
-/*utilisation de l'ia pour assombrir le fond*/
-body::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    
-    /* On applique l'image de fond */
-    background: url('background1.png') no-repeat center / cover;
-    
-    /* GESTION DE LA TRANSPARENCE : 0 = invisible, 1 = opaque */
-    opacity: 0.4; 
-    
-    z-index: -1; /* Place l'image DERRIÈRE le texte */
-}
+
 .title {
   display: flex;
   align-items: center;
   gap: 30px;
+  text-decoration: none;
+  color: white;
 }
 
 #dstLogo {
@@ -56,8 +45,8 @@ nav {
   align-items: center;
   margin: 0;
   padding: 10px 10px;
-  background-color: rgba(0, 0, 0, 0.700);
-  color: rgba(255, 255, 255, 0.700);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 h1 {
@@ -78,7 +67,7 @@ h1 {
   position: absolute;
   display: none;
   flex-direction: column;
-  margin-top: 13px;
+  margin-top: 31px;
   margin-left: -10px;
   list-style: none;
 }
@@ -92,10 +81,10 @@ h1 {
 }
 .menuItems li {
   padding: 15px 10px;
-  background-color: rgba(0, 0, 0, 0.700);
-  width: 20vw;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
   margin-bottom: 1px;
-  color: rgba(255, 255, 255, 0.700);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .menuItems li:hover {
@@ -106,14 +95,14 @@ h1 {
   height: 40px;
 }
 
-@media all and (max-width: 981px) {
+/* @media all and (max-width: 981px) {
   .menuItems li {
     padding: 15px 10px;
-    background-color: rgba(0, 0, 0, 0.700);
-    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
     margin-bottom: 1px;
   }
-}
+} */
 
 #dayInput {
   border: transparent;
@@ -132,9 +121,8 @@ h1 {
   margin: 0;
 }
 
-
 .setDay {
-  color: rgba(255, 255, 255, 0.700);
+  color: rgba(255, 255, 255, 0.7);
   display: flex;
   margin: 5px;
   align-items: center;
@@ -142,7 +130,7 @@ h1 {
   gap: 10px;
   border: 0px black transparent;
   padding-left: 50px;
-  background-color: rgba(0, 0, 0, 0.700);
+  background-color: rgba(0, 0, 0, 0.7);
   border-radius: 2em;
 }
 
@@ -160,7 +148,7 @@ h1 {
   width: 2em;
   border: 0px;
   background-color: rgba(0, 0, 0, 0);
-color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
 }
 
 #gridCalendar {
@@ -172,8 +160,9 @@ color: rgb(255, 255, 255);
 }
 
 .divDay {
-  border: 1px solid black;
+  background-color: #000000a2;
   width: fit-content;
+  border-radius: 1em;
   height: 4em;
   display: flex;
   align-items: center;
@@ -184,8 +173,9 @@ color: rgb(255, 255, 255);
 
 .divDay p {
   display: flex;
-  border: 1px black solid;
-  border-radius: 50%;
+  border: 1px black transparent;
+  border-radius: 40%;
+  color: rgb(255, 255, 255);
   width: 40px;
   height: 40px;
   align-items: center;
@@ -212,27 +202,25 @@ color: rgb(255, 255, 255);
   align-self: center;
   border-radius: 35px;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.700);
+  background-color: rgba(0, 0, 0, 0.7);
   color: white;
   font-size: 40px;
 }
 
 #btnDay:hover {
-    background-color: #c0c0c0;
-
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .fullMoon {
-  border: 1px black solid;
+  border: 1px rgb(255, 255, 255) solid;
   border-radius: 50%;
   width: 40px;
   height: 40px;
   background-color: rgb(255, 255, 255);
-  
 }
 
 .newMoon {
-  border: 1px black solid;
+  border: 1px rgb(255, 255, 255) solid;
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -240,17 +228,64 @@ color: rgb(255, 255, 255);
 }
 
 .autumn {
-  background-color: orangered;
+  border: rgb(150, 29, 7) solid;
 }
 
 .winter {
-  background-color: cyan;
+  border: #01a396 solid;
 }
 
 .spring {
-  background-color: green;
+  border: rgb(70, 114, 0) solid;
 }
 
 .summer {
-  background-color: yellow;
+  border: rgb(202, 155, 1) solid;
+}
+
+.mainbtn {
+  display: flex;
+  margin-top: 12vw;
+  justify-content: space-evenly;
+}
+
+.mainbtn button {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 5px;
+  font-size: 2em;
+  padding: 0.2em 0.5em;
+  gap: 10px;
+  border: 0px black transparent;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 2em;
+}
+
+.mainbtn button a {
+  text-align: center;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.mainbtn button:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+#titlePres {
+    border-top: 2px solid rgba(128, 128, 128, 0.658);
+  background-color:   rgba(0, 0, 0, 0.7);
+margin-top: 12vw;
+  padding: 1em;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 2em;
+  text-align: center;
+}
+
+#pres {
+  margin-top: 0;
+  text-align: center;
+  font-size: 1.5em;
+  color: rgba(255, 255, 255, 0.7);
+  background-color:   rgba(0, 0, 0, 0.7);
+  padding-bottom: 1em;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.658);
+
 }
