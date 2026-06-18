@@ -253,6 +253,7 @@ h1 {
   display: flex;
   margin-top: 12vw;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .mainbtn button {
@@ -391,4 +392,10 @@ main {
   justify-content: space-evenly;
   flex-wrap: wrap;
   padding: 30px;
+}
+
+h1 {
+  font-size: 3em;
+  justify-self: center;
+  margin: 30px;
 }
