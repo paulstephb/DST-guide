@@ -289,3 +289,30 @@ margin-top: 12vw;
     border-bottom: 2px solid rgba(128, 128, 128, 0.658);
 
 }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+#linearGradient {
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7) , rgba(255, 255, 255, 0));
+  height: 2em;
+}
+
+.footerLinks {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footerLinks:hover {
+  text-decoration: underline;
+}
+
+.footerLinksBox {
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
