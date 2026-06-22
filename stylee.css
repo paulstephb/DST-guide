@@ -4,6 +4,12 @@
   font-family: "Archivo", sans-serif;
 }
 
+/* desactive la scrollbar */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   background-image: url(background1.png);
   background-repeat: no-repeat;
@@ -28,6 +34,7 @@ label {
   margin: 0;
   padding: 5px;
   font-size: 30px;
+
   background-color: #000000;
   cursor: pointer;
   border-radius: 5px;
@@ -121,11 +128,7 @@ h1 {
   margin: 0;
 }
 
-#calendarSize::-webkit-outer-spin-button,
-#calendarSize::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
+
 
 .setDay {
   color: rgba(255, 255, 255, 0.7);
@@ -157,24 +160,27 @@ h1 {
   color: rgb(255, 255, 255);
 }
 
+
 #gridCalendar {
-  display: flex;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
-  margin: 3%;
+  margin: 1%;
+  padding: 2%;
+  border-radius: 1em;
 }
 
 .divDay {
   background-color: #000000a2;
   width: fit-content;
-  border-radius: 1em;
   height: 4em;
   display: flex;
   align-items: center;
   padding-left: 5px;
   padding-right: 5px;
-  margin-bottom: 1em;
+  margin-bottom: 1%;
+  border: 1px rgb(63, 62, 62) solid;
 }
 
 .divDay p {
@@ -199,12 +205,27 @@ h1 {
 
 .box1 {
   display: flex;
-  flex-direction: column;
   gap: 20px;
+  justify-content: center;
 }
-#btnDay {
-  height: 70px;
+.btnDay {
+  width: fit-content;
+  align-self: center;
+  border-radius: 35px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 15px;
+  font-size: 40px;
+}
+
+.btnDay:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+#reset {
   width: 70px;
+  height: 70px;
   align-self: center;
   border-radius: 35px;
   cursor: pointer;
@@ -213,8 +234,9 @@ h1 {
   font-size: 40px;
 }
 
-#btnDay:hover {
-  background-color: rgba(0, 0, 0, 0.3);
+#reset:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+
 }
 
 .fullMoon {
@@ -234,19 +256,19 @@ h1 {
 }
 
 .autumn {
-  border: rgb(150, 29, 7) solid;
+  border-bottom: 4px rgb(205, 79, 56) solid;
 }
 
 .winter {
-  border: #01a396 solid;
+  border-bottom:4px rgb(148, 191, 242) solid;
 }
 
 .spring {
-  border: rgb(70, 114, 0) solid;
+  border-bottom:4px rgb(127, 201, 80) solid;
 }
 
 .summer {
-  border: rgb(202, 155, 1) solid;
+  border-bottom:4px rgb(254, 206, 138) solid;
 }
 
 .mainbtn {
@@ -342,7 +364,6 @@ main {
 .preview-card {
   background-color: rgba(0, 0, 0, 0.7);
   display: flex;
-
   text-decoration: none;
   color: rgba(255, 255, 255, 0.7);
   border-radius: 20px;
@@ -398,4 +419,77 @@ h1 {
   font-size: 3em;
   justify-self: center;
   margin: 30px;
+}
+
+h2 {
+  font-size: 3em;
+  justify-self: center;
+  margin: 30px;
+}
+
+.box2 {
+  margin-top: 12vw;
+}
+
+.deerClops {
+  background-image: url(300px-Deerclops.webp);
+  width: 6em;
+  background-position-y: center;
+  background-size: 120%;
+  background-position-x: -150%;
+  background-repeat: no-repeat;
+  background-color: rgba(61, 61, 61, 0.7);
+}
+
+.MoonBackground {
+    background-color: rgba(61, 61, 61, 0.7);
+
+}
+
+#seasonColor {
+  display: none;
+  justify-self: center;
+  margin: 1%;
+}
+
+#autumnColor {
+  background-color: rgb(205, 79, 56);
+  height: 2em;
+  display: flex;
+  align-items: center;padding-bottom: 3px;padding-left: 1em;
+  padding-right: 1em;
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+
+}
+
+#winterColor{
+  background-color: rgb(148, 191, 242);
+  height: 2em;
+  display: flex;  align-items: center;padding-bottom: 3px;
+  padding-left: 1em;
+  padding-right: 1em;
+
+
+  
+}
+
+#springColor{
+  background-color: rgb(127, 201, 80);
+  height: 2em;
+  display: flex;  align-items: center;padding-bottom: 3px;
+padding-left: 1em;
+  padding-right: 1em;
+
+  
+}
+
+#summerColor{
+  background-color: rgb(254, 206, 138);
+  height: 2em;
+  display: flex;  align-items: center;padding-left: 1em;
+  padding-right: 1em;
+padding-bottom: 3px;
+border-bottom-right-radius: 1em;
+  border-top-right-radius: 1em;
 }
