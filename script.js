@@ -78,7 +78,7 @@ function reset() {
   seasonColor.style.display = "none";
 }
 
-function
+
 
 btnDay.addEventListener("click", setDay);
 btnReset.addEventListener("click", reset);
