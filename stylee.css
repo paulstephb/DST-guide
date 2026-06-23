@@ -11,6 +11,8 @@ body::-webkit-scrollbar {
 }
 
 body {
+  background-color: rgba(0, 0, 0, 0.4);
+  background-blend-mode: multiply;
   background-image: url(background1.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -128,8 +130,6 @@ h1 {
   margin: 0;
 }
 
-
-
 .setDay {
   color: rgba(255, 255, 255, 0.7);
   display: flex;
@@ -160,7 +160,6 @@ h1 {
   color: rgb(255, 255, 255);
 }
 
-
 #gridCalendar {
   background-color: rgba(0, 0, 0, 0.7);
   display: none;
@@ -181,6 +180,11 @@ h1 {
   padding-right: 5px;
   margin-bottom: 1%;
   border: 1px rgb(63, 62, 62) solid;
+}
+
+.divDay:hover {
+  background-color: #ffffff52;
+  cursor: default;
 }
 
 .divDay p {
@@ -235,24 +239,19 @@ h1 {
 }
 
 #reset:hover {
-    background-color: rgba(0, 0, 0, 0.3);
-
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .fullMoon {
-  border: 1px rgb(255, 255, 255) solid;
-  border-radius: 50%;
+  background-image: url(Moon_Full.webp);
   width: 40px;
   height: 40px;
-  background-color: rgb(255, 255, 255);
 }
 
 .newMoon {
-  border: 1px rgb(255, 255, 255) solid;
-  border-radius: 50%;
+  background-image: url(Moon_New.webp);
   width: 40px;
   height: 40px;
-  background-color: rgb(0, 0, 0);
 }
 
 .autumn {
@@ -260,15 +259,15 @@ h1 {
 }
 
 .winter {
-  border-bottom:4px rgb(148, 191, 242) solid;
+  border-bottom: 4px rgb(148, 191, 242) solid;
 }
 
 .spring {
-  border-bottom:4px rgb(127, 201, 80) solid;
+  border-bottom: 4px rgb(127, 201, 80) solid;
 }
 
 .summer {
-  border-bottom:4px rgb(254, 206, 138) solid;
+  border-bottom: 4px rgb(254, 206, 138) solid;
 }
 
 .mainbtn {
@@ -441,9 +440,38 @@ h2 {
   background-color: rgba(61, 61, 61, 0.7);
 }
 
-.MoonBackground {
-    background-color: rgba(61, 61, 61, 0.7);
+.bearger {
+  background-image: url(Bearger.webp);
+  width: 6em;
+  background-position-y: center;
+  background-size: 120%;
+  background-position-x: -150%;
+  background-repeat: no-repeat;
+  background-color: rgba(61, 61, 61, 0.7);
+}
 
+.antLion {
+  background-image: url(Antlion.webp);
+  width: 6em;
+  background-position-y: center;
+  background-size: 120%;
+  background-position-x: -150%;
+  background-repeat: no-repeat;
+  background-color: rgba(61, 61, 61, 0.7);
+}
+
+.mooseGoose {
+  background-image: url(Goose.webp);
+  width: 6em;
+  background-position-y: center;
+  background-size: 120%;
+  background-position-y: 20%;
+  background-repeat: no-repeat;
+  background-color: rgba(61, 61, 61, 0.7);
+}
+
+.MoonBackground {
+  background-color: rgba(61, 61, 61, 0.7);
 }
 
 #seasonColor {
@@ -456,40 +484,42 @@ h2 {
   background-color: rgb(205, 79, 56);
   height: 2em;
   display: flex;
-  align-items: center;padding-bottom: 3px;padding-left: 1em;
+  align-items: center;
+  padding-bottom: 3px;
+  padding-left: 1em;
   padding-right: 1em;
   border-top-left-radius: 1em;
   border-bottom-left-radius: 1em;
-
 }
 
-#winterColor{
+#winterColor {
   background-color: rgb(148, 191, 242);
   height: 2em;
-  display: flex;  align-items: center;padding-bottom: 3px;
+  display: flex;
+  align-items: center;
+  padding-bottom: 3px;
   padding-left: 1em;
   padding-right: 1em;
-
-
-  
 }
 
-#springColor{
+#springColor {
   background-color: rgb(127, 201, 80);
   height: 2em;
-  display: flex;  align-items: center;padding-bottom: 3px;
-padding-left: 1em;
+  display: flex;
+  align-items: center;
+  padding-bottom: 3px;
+  padding-left: 1em;
   padding-right: 1em;
-
-  
 }
 
-#summerColor{
+#summerColor {
   background-color: rgb(254, 206, 138);
   height: 2em;
-  display: flex;  align-items: center;padding-left: 1em;
+  display: flex;
+  align-items: center;
+  padding-left: 1em;
   padding-right: 1em;
-padding-bottom: 3px;
-border-bottom-right-radius: 1em;
+  padding-bottom: 3px;
+  border-bottom-right-radius: 1em;
   border-top-right-radius: 1em;
 }

@@ -55,6 +55,18 @@ function setDay() {
     if (positionCycle === 30) {
       divDay.classList.add("deerClops");
     }
+    //spawn bearger
+    if (currentDay > 70 && positionCycle === 6) {
+      divDay.classList.add("bearger");
+    }
+    //spawn AL
+    if (positionCycle === 56) {
+      divDay.classList.add("antLion");
+    }
+    //spawn mooseGoose
+    if (positionCycle === 37) {
+      divDay.classList.add("mooseGoose");
+    }
   }
 }
 //function qui reset le calendrier
@@ -65,6 +77,8 @@ function reset() {
   gridCalendar.style.display = "none";
   seasonColor.style.display = "none";
 }
+
+function
 
 btnDay.addEventListener("click", setDay);
 btnReset.addEventListener("click", reset);
