@@ -3,12 +3,32 @@ const btnDay = document.getElementById("btnDay");
 const day = document.getElementById("dayInput");
 const btnReset = document.getElementById("reset");
 const seasonColor = document.getElementById("seasonColor");
+//const position tooltip
+const tooltip = document.getElementById("tooltip");
+const offsetX = 15;
+const offsetY = 10;
+//TOUTES les elements du tooltip
+const autumnTooltip = document.getElementById("autumnTooltip");
+const WinterTooltip = document.getElementById("WinterTooltip");
+const SpringTooltip = document.getElementById("SpringTooltip");
+const SummerTooltip = document.getElementById("SummerTooltip");
+const fullmoonTooltip = document.getElementById("fullmoonTooltip");
+const newmoonTooltip = document.getElementById("newmoonTooltip");
+const DCspawn = document.getElementById("DCspawn");
+const MGspawn = document.getElementById("MGspawn");
+const Aspawn = document.getElementById("Aspawn");
+const Bspawn = document.getElementById("Bspawn");
+
 // const calendarSize = document.getElementById("calendarSize");
 let currentSize = 0;
 function setDay() {
   //affichage du fond du calendrier + legende
   gridCalendar.style.display = "flex";
   seasonColor.style.display = "flex";
+  //const position tooltip
+  const tooltip = document.getElementById("tooltip");
+  const offsetX = 15;
+  const offsetY = 10;
 
   currentSize += 10;
   btnDay.innerHTML = "+ 10";
@@ -26,6 +46,17 @@ function setDay() {
     divDay.appendChild(count);
 
     //condition trouvée avec IA
+    //couleur saison
+    const positionCycle = ((currentDay - 1) % 70) + 1;
+    if (positionCycle >= 1 && positionCycle <= 20) {
+      divDay.classList.add("autumn");
+    } else if (positionCycle >= 21 && positionCycle <= 35) {
+      divDay.classList.add("winter");
+    } else if (positionCycle >= 36 && positionCycle <= 55) {
+      divDay.classList.add("spring");
+    } else {
+      divDay.classList.add("summer");
+    }
     //cycle lunaire
     if (currentDay >= 11 && (currentDay - 11) % 20 === 0) {
       const fullMoon = document.createElement("div");
@@ -40,17 +71,7 @@ function setDay() {
 
       divDay.appendChild(newMoon);
     }
-    //couleur saison
-    const positionCycle = ((currentDay - 1) % 70) + 1;
-    if (positionCycle >= 1 && positionCycle <= 20) {
-      divDay.classList.add("autumn");
-    } else if (positionCycle >= 21 && positionCycle <= 35) {
-      divDay.classList.add("winter");
-    } else if (positionCycle >= 36 && positionCycle <= 55) {
-      divDay.classList.add("spring");
-    } else {
-      divDay.classList.add("summer");
-    }
+
     //spawn DC
     if (positionCycle === 30) {
       divDay.classList.add("deerClops");
@@ -67,6 +88,59 @@ function setDay() {
     if (positionCycle === 37) {
       divDay.classList.add("mooseGoose");
     }
+
+    //Envent listener tooltip
+    divDay.addEventListener("mouseenter", () => {
+      tooltip.style.display = "block";
+      //saison
+      if (positionCycle >= 1 && positionCycle <= 20) {
+        autumnTooltip.style.display = "flex";
+      } else if (positionCycle >= 21 && positionCycle <= 35) {
+        WinterTooltip.style.display = "flex";
+      } else if (positionCycle >= 36 && positionCycle <= 55) {
+        SpringTooltip.style.display = "flex";
+      } else {
+        SummerTooltip.style.display = "flex";
+      }
+      //cycle lune
+      if (currentDay >= 11 && (currentDay - 11) % 20 === 0) {
+        fullmoonTooltip.style.display = "flex";
+      }
+      if (currentDay >= 1 && (currentDay - 1) % 20 === 0) {
+        newmoonTooltip.style.display = "flex";
+      }
+
+      //spawn bosses
+
+      //spawn DC
+      if (positionCycle === 30) {
+        DCspawn.style.display = "flex";
+      }
+      //spawn bearger
+      if (currentDay > 70 && positionCycle === 6) {
+        Bspawn.style.display = "flex";
+      }
+      //spawn AL
+      if (positionCycle === 56) {
+        Aspawn.style.display = "flex";
+      }
+      //spawn mooseGoose
+      if (positionCycle === 37) {
+        MGspawn.style.display = "flex";
+      }
+    });
+
+    divDay.addEventListener("mousemove", (e) => {
+      tooltip.style.left = e.clientX + offsetX + "px";
+      tooltip.style.top = e.clientY + offsetY + "px";
+    });
+
+    divDay.addEventListener("mouseleave", () => {
+      tooltip.style.display = "none";
+      for (const items of tooltip.children) {
+        items.style.display = "none";
+      }
+    });
   }
 }
 //function qui reset le calendrier
@@ -76,9 +150,8 @@ function reset() {
   gridCalendar.innerHTML = "";
   gridCalendar.style.display = "none";
   seasonColor.style.display = "none";
+  day.value = 1;
 }
-
-
 
 btnDay.addEventListener("click", setDay);
 btnReset.addEventListener("click", reset);
