@@ -18,6 +18,12 @@ const DCspawn = document.getElementById("DCspawn");
 const MGspawn = document.getElementById("MGspawn");
 const Aspawn = document.getElementById("Aspawn");
 const Bspawn = document.getElementById("Bspawn");
+// elements guide
+const allGuide = document.getElementById("allGuide");
+const autumnGuide = document.getElementById("autumnGuide");
+const winterGuide = document.getElementById("winterGuide");
+const springGuide = document.getElementById("springGuide");
+const summerGuide = document.getElementById("summerGuide");
 
 // const calendarSize = document.getElementById("calendarSize");
 let currentSize = 0;
@@ -141,6 +147,59 @@ function setDay() {
         items.style.display = "none";
       }
     });
+
+
+    //scroll vers guide
+    divDay.addEventListener("click", () => {
+      for (const guides of allGuide.children) {
+        guides.style.display = "none";
+      }
+      //cycle lune
+      if (currentDay >= 11 && (currentDay - 11) % 20 === 0) {
+      }
+      if (currentDay >= 1 && (currentDay - 1) % 20 === 0) {
+      }
+      //spawn bosses
+
+      //spawn DC
+      if (positionCycle === 30) {
+      }
+      //spawn bearger
+      if (currentDay > 70 && positionCycle === 6) {
+      }
+      //spawn AL
+      if (positionCycle === 56) {
+      }
+      //spawn mooseGoose
+      if (positionCycle === 37) {
+      }
+      //saison
+      if (positionCycle >= 1 && positionCycle <= 20) {
+        autumnGuide.style.display = "block";
+        autumnGuide.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      } else if (positionCycle >= 21 && positionCycle <= 35) {
+        winterGuide.style.display = "block";
+        winterGuide.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      } else if (positionCycle >= 36 && positionCycle <= 55) {
+        springGuide.style.display = "block";
+        springGuide.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      } else {
+        summerGuide.style.display = "block";
+        summerGuide.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    });
   }
 }
 //function qui reset le calendrier
@@ -162,3 +221,12 @@ day.addEventListener("keydown", function (event) {
     setDay();
   }
 });
+
+const up = document.getElementById("up")
+const nav = document.getElementById("nav")
+up.addEventListener("click", () => {
+nav.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+})
