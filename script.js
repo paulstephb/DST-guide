@@ -222,6 +222,9 @@ function reset() {
   gridCalendar.style.display = "none";
   seasonColor.style.display = "none";
   day.value = 1;
+  for (const guides of allGuide.children) {
+        guides.style.display = "none";
+      }
 }
 
 btnDay.addEventListener("click", setDay);

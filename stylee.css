@@ -484,50 +484,26 @@ h2 {
   display: none;
   justify-self: center;
   margin: 1%;
+  background-color:  rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  border-radius: 30px;
+  gap: 10px;
 }
 
 #autumnColor {
-  background-color: rgb(205, 79, 56);
-  height: 2em;
-  display: flex;
-  align-items: center;
-  padding-bottom: 3px;
-  padding-left: 1em;
-  padding-right: 1em;
-  border-top-left-radius: 1em;
-  border-bottom-left-radius: 1em;
+  color: rgb(205, 79, 56);
 }
 
 #winterColor {
-  background-color: rgb(148, 191, 242);
-  height: 2em;
-  display: flex;
-  align-items: center;
-  padding-bottom: 3px;
-  padding-left: 1em;
-  padding-right: 1em;
+  color: rgb(148, 191, 242);
 }
 
 #springColor {
-  background-color: rgb(127, 201, 80);
-  height: 2em;
-  display: flex;
-  align-items: center;
-  padding-bottom: 3px;
-  padding-left: 1em;
-  padding-right: 1em;
+  color: rgb(127, 201, 80);
 }
 
 #summerColor {
-  background-color: rgb(254, 206, 138);
-  height: 2em;
-  display: flex;
-  align-items: center;
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-bottom: 3px;
-  border-bottom-right-radius: 1em;
-  border-top-right-radius: 1em;
+  color: rgb(254, 206, 138);
 }
 
 h3 {
