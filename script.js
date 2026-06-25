@@ -24,6 +24,8 @@ const autumnGuide = document.getElementById("autumnGuide");
 const winterGuide = document.getElementById("winterGuide");
 const springGuide = document.getElementById("springGuide");
 const summerGuide = document.getElementById("summerGuide");
+const fullmoonGuide = document.getElementById("fullmoonGuide");
+const newmoonGuide = document.getElementById("newmoonGuide");
 
 // const calendarSize = document.getElementById("calendarSize");
 let currentSize = 0;
@@ -148,17 +150,12 @@ function setDay() {
       }
     });
 
-
     //scroll vers guide
     divDay.addEventListener("click", () => {
       for (const guides of allGuide.children) {
         guides.style.display = "none";
       }
-      //cycle lune
-      if (currentDay >= 11 && (currentDay - 11) % 20 === 0) {
-      }
-      if (currentDay >= 1 && (currentDay - 1) % 20 === 0) {
-      }
+      
       //spawn bosses
 
       //spawn DC
@@ -199,6 +196,21 @@ function setDay() {
           block: "start",
         });
       }
+      //cycle lune
+      if (currentDay >= 11 && (currentDay - 11) % 20 === 0) {
+        fullmoonGuide.style.display = "block";
+        fullmoonGuide.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+      if (currentDay >= 1 && (currentDay - 1) % 20 === 0) {
+        newmoonGuide.style.display = "block";
+        newmoonGuide.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
     });
   }
 }
@@ -222,11 +234,11 @@ day.addEventListener("keydown", function (event) {
   }
 });
 
-const up = document.getElementById("up")
-const nav = document.getElementById("nav")
+const up = document.getElementById("up");
+const nav = document.getElementById("nav");
 up.addEventListener("click", () => {
-nav.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-})
+  nav.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+});
